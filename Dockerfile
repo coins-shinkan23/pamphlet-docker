@@ -1,7 +1,7 @@
 FROM ghcr.io/amutake/satysfi-base-image:opam-2.1.3-ocaml-4.14.0
 ENV SATYSFI_VERSION=0.0.7-26-g9f4b68ec
 ENV SATYROGRAPHOS_VERSION=0.0.2.11
-ENV SATYSFI_PACKAGES="satysfi-fss"
+ENV SATYSFI_PACKAGES="satysfi-fss satysfi-azmath satysfi-easytable satysfi-enumitem satysfi-colorbox satysfi-figbox satysfi-image satysfi-latexcmds satysfi-quotation satysfi-ruby satysfi-siunitx satysfi-uline"
 ENV SATYROGRAPHOS_EXPERIMENTAL=1
 RUN opam update && \
     apt-get update && \
