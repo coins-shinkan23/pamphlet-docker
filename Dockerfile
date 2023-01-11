@@ -9,4 +9,4 @@ RUN mv /tmp/docker-entrypoint.sh /usr/bin/docker-entrypoint.sh && \
     opam install satysfi-fss && \
     eval $(opam env) && \
     satyrographos install
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["opam", "exec", "--"]
