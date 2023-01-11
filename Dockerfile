@@ -9,4 +9,6 @@ RUN opam update && \
 RUN eval $(opam env) && \
     satyrographos install
 RUN echo "eval $(opam env)" >> ~/.bashrc
-ENTRYPOINT ["bash"]
+RUN echo '#!/bin/bash\nexec /bin/bash -l -c "$*"' > /entrypoint.sh && \
+    chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
