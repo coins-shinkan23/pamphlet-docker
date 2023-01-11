@@ -8,4 +8,5 @@ RUN opam update && \
     opam install satysfi-fss
 RUN eval $(opam env) && \
     satyrographos install
-ENTRYPOINT ["docker-entrypoint.sh"]
+RUN echo "eval $(opam env)" >> ~/.bashrc
+ENTRYPOINT ["bash"]
